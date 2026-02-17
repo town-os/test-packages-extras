@@ -11,6 +11,9 @@ volumes:
   data:
     mountpoint: /var/lib/postgresql/data
 questions:
-  user: "What user should postgres use?"
-  password: "What password should postgres use?"
-  dbname: "What database name should postgres create?"
+  user:
+    query: "What user should postgres use?"
+  password:
+    query: "What password should postgres use?"
+  dbname:
+    query: "What database name should postgres create?"

@@ -1,0 +1,16 @@
+image: postgres:16.0-alpine
+environment:
+  POSTGRES_USER: "@user@"
+  POSTGRES_PASSWORD: "@password@"
+  POSTGRES_DB: "@dbname@"
+network:
+  external: {}
+  internal:
+    "5432": "5432"
+volumes:
+  data:
+    mountpoint: /var/lib/postgresql/data
+questions:
+  user: "What user should postgres use?"
+  password: "What password should postgres use?"
+  dbname: "What database name should postgres create?"

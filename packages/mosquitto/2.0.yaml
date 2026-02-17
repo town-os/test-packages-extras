@@ -1,0 +1,12 @@
+image: eclipse-mosquitto:2.0
+environment: {}
+network:
+  external:
+    "1883": "1883"
+  internal: {}
+volumes:
+  config:
+    mountpoint: /mosquitto/config
+  data:
+    mountpoint: /mosquitto/data
+questions: {}

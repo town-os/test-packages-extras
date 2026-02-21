@@ -10,6 +10,7 @@ network:
 volumes:
   data:
     mountpoint: /var/lib/postgresql/data
+    quota: 2gb
 questions:
   user:
     query: "What user should postgres use?"

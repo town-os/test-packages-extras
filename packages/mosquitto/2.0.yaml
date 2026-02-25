@@ -1,3 +1,4 @@
+description: "A lightweight MQTT message broker for IoT and home automation."
 image: eclipse-mosquitto:2.0
 environment: {}
 network:

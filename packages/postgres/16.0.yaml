@@ -1,3 +1,4 @@
+description: "A powerful, open-source relational database system."
 image: postgres:16.0-alpine
 environment:
   POSTGRES_USER: "@user@"

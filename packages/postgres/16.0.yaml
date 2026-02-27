@@ -7,12 +7,15 @@ environment:
 network:
   external: {}
   internal:
-    "5432": "5432"
+    "@port@": "5432"
 volumes:
   data:
     mountpoint: /var/lib/postgresql/data
     quota: 2gb
 questions:
+  port:
+    query: "What port should postgres listen on?"
+    type: port
   user:
     query: "What user should postgres use?"
   password:

@@ -1,0 +1,31 @@
+description: "Fixture package: question names containing underscores must compile and substitute through templates."
+image: nginx
+environment:
+  REG_SECRET: "@registration_secret@"
+  MAC_SECRET: "@macaroon_secret@"
+network:
+  external:
+    "@http_port@": "80"
+volumes:
+  data:
+    mountpoint: /usr/share/nginx/html
+templates:
+  conf:
+    volume: data
+    path: app.conf
+    content: |
+      registration_secret = "@registration_secret@"
+      macaroon_secret_key = "@macaroon_secret@"
+      listen_port = @http_port@
+questions:
+  http_port:
+    query: "What HTTP port should the fixture listen on?"
+    type: port
+  registration_secret:
+    query: "Shared secret for registration?"
+    type: secret
+    default: auto
+  macaroon_secret:
+    query: "Macaroon secret key?"
+    type: secret
+    default: auto
